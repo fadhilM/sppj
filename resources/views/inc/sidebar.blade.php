@@ -9,18 +9,23 @@
 
                 @if (Auth::User()->level==0)
                 <li>
-                    <a class="text-dark" href="/pakar">Data Pakar</a>
+                <a class="text-dark" href="{{route('pakar.index')}}">Data Pakar</a>
                 </li>    
                 @endif
 
                 @if (Auth::User()->level==1)
                 <li>
-                    <a class="text-dark" href="/penyakit">Data Penyakit</a>
+                    <a class="text-dark" href="{{route('penyakit.index')}}">Data Penyakit</a>
                 </li>    
                 @endif
                 @if (Auth::User()->level!=1)
                 <li>
-                    <a class="text-dark" href="/penyakit">Katalog Penyakit</a>
+                    <a class="text-dark" href="{{route('penyakit.index')}}">Katalog Penyakit</a>
+                </li>    
+                @endif
+                @if (Auth::User()->level=1)
+                <li>
+                    <a class="text-dark" href="{{route('gejala.index')}}">Data Gejala</a>
                 </li>    
                 @endif
             </ul>

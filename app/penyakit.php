@@ -12,4 +12,9 @@ class penyakit extends Model
     public $primaryKey = 'id';
     //Timestamps
     public $timestamps = true;
+
+    public function gejala()
+    {
+        return $this->belongsTo('App\gejala');
+    }
 }

@@ -11,8 +11,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    {{-- <link rel="dns-prefetch" href="https://fonts.gstatic.com"> --}}
+    {{-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css"> --}}
     
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
 </head>
 
-<body style="background-color: #9FA6B9;">
+<body style="">
 
     @include('inc.navbar')
     <br><br><br>
