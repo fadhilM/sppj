@@ -22,6 +22,9 @@ Route::resource('pakar','userController');
 Route::resource('penyakit','penyakitController');
 Route::resource('gejala','gejalaController');
 Route::get('/search','penyakitController@search');
+Route::post('/editNode/{id}','gejalaController@updateNode');
+Route::post('/diagnosa/{id}','gejalaController@node');
+Route::get('/diagnosa','gejalaController@diagnosa')->name('diagnosa');
 
 
 

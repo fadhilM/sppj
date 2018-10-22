@@ -18,7 +18,7 @@
     </div>
     {{Form::hidden('_method','PUT')}}
     <a href="/penyakit/{{$penyakit->id}}" class="btn btn-danger">Kembali</a>
-    {{Form::submit('Buat',['class'=>'btn btn-primary'])}}
+    {{Form::submit('Edit',['class'=>'btn btn-primary'])}}
     {!! Form::close() !!}
 </div>
 </div>

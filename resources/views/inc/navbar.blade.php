@@ -23,6 +23,9 @@
                     <!-- Authentication Links -->
                     @guest
                     <li class="nav-item">
+                    <a class="nav-link" href="{{ route('diagnosa')}}">Diagnosa Penyakit</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/penyakit">Katalog Penyakit</a>
                     </li>
                     <li class="nav-item">

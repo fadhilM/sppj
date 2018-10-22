@@ -7,29 +7,31 @@
 @endif
 
 @section('content')
-  <div class="r1">
-  <h1>Data Penyakit</h1><br>
-  {!! Form::open(['action'=> 'penyakitController@search', 'method' => 'GET','class'=>'form-inline'])!!}
-     @csrf
+<div class="card">
+  <div class="card-body">
+      <h1>Data Penyakit</h1><br>
+    {!! Form::open(['action'=> 'penyakitController@search', 'method' => 'GET','class'=>'form-inline'])!!}
+    @csrf
     <input class="form-control col-11 mr-sm-auto" name="search" type="search" placeholder="Search" value="{{request()->query('search')}}" aria-label="Search">
     {{Form::submit('Cari',['class'=>'btn btn-success my-2 my-sm-auto'])}}
-  {!! Form::close() !!}
-<br><br>
-@if (count($penyakit) > 0)
-<div class="list-group">
-    @foreach ($penyakit as $p)  
-    <a href="/penyakit/{{$p->id}}" class="list-group-item list-group-item-action">{{$p->namaPenyakit}}</a>        
-    @endforeach
-</div>
-<br>
-{!!$penyakit->links()!!}  
-@else
-<p>Data Penyakit Tidak Ditemukan</p>
-@endif
-@if (@isset(Auth::user()->id))
-@if (Auth::user()->level==1)
+    {!! Form::close() !!}
+    <br><br>
+    @if (count($penyakit) > 0)
+    <div class="list-group">
+      @foreach ($penyakit as $p)  
+      <a href="/penyakit/{{$p->id}}" class="list-group-item list-group-item-action">{{$p->namaPenyakit}}</a>        
+      @endforeach
+    </div>
+    <br>
+    {!!$penyakit->links()!!}  
+    @else
+    <p>Data Penyakit Tidak Ditemukan</p>
+    @endif
+    @if (@isset(Auth::user()->id))
+    @if (Auth::user()->level==1)
     <a href="/penyakit/create" class="btn btn-primary text-light">Buat Data Penyakit</a>
-@endif
-@endif
+    @endif
+    @endif
+  </div>
 </div>
 @endsection
