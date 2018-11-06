@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\gejala;
 use App\penyakit;
 use DB;
+use Auth;
 
 class gejalaController extends Controller
 {
@@ -108,14 +109,18 @@ class gejalaController extends Controller
                 
                 public function updateNode(Request $request, $id)
                 {
-                    $this->validate($request,[
-                        'ya' => 'required',
-                        'tidak' => 'required',
-                        ]);
-                        //update
+                        $ya = $request->input('ya');
+                        $tidak = $request->input('tidak');
+                        if($ya==0){
+                            $ya=null;
+                        }
+                        if($tidak==0){
+                            $tidak=null;
+                        }  
                         $gejala = gejala::find($id);
-                        $gejala->ya = $request->input('ya');
-                        $gejala->tidak = $request->input('tidak');
+                        
+                        $gejala->ya = $ya;
+                        $gejala->tidak = $tidak;
                         $gejala->save();
                         
                         return redirect('/gejala')->with('success','Data Gejala Telah Diubah');
@@ -133,12 +138,16 @@ class gejalaController extends Controller
                     {
                         $gejala = gejala::find($id);
                         $gejala->delete();
-                        return redirect('/gejala')->with('success','Data Gejala Telah Dihapus');
+                        return redirect('/gejala')->with('success','Data Gejala Telah Dihapus. Harap Periksa Kembali Node Diagnosa');
                     }
                     
                     public function diagnosa(){
                         $gejala=gejala::where('posisi',1)->first();
-                        return view('diagnosa.diagnosa')->with('gejala',$gejala);
+                        if(auth::user()!=null){
+                            return view('diagnosa.diagnosa')->with('gejala',$gejala);
+                        }else{
+                            return view('diagnosa.diagnosaGuest')->with('gejala',$gejala);
+                        }
                     }
                     
                     public function node(Request $request,$id){
@@ -148,11 +157,20 @@ class gejalaController extends Controller
                             $nd=$nodeSelanjutnya[0]->ya;
                             if(!is_null($nd)){
                                 $gejala=gejala::where('id',$nd)->get();
-                                return view('diagnosa.diagnosa')->with('gejala',$gejala[0]);
+                                if(auth::user()!=null){
+                                    return view('diagnosa.diagnosa')->with('gejala',$gejala[0]);
+                                }else{
+                                    return view('diagnosa.diagnosaGuest')->with('gejala',$gejala[0]);
+                                }
                             } else{
                                 $p=penyakit::where('id',$nodeSelanjutnya[0]->id_penyakit)->get();
                                 $penyakit=$p[0];
-                                return view('diagnosa.HasilDiagnosa')->with('penyakit',$penyakit);
+                                if(auth::user()!=null){
+                                    return view('diagnosa.HasilDiagnosa')->with('penyakit',$penyakit);
+                                }else{
+                                    return view('diagnosa.hasilDiagnosaGuest')->with('penyakit',$penyakit);
+                                }
+                                
                             }
                             
                         }else{
@@ -160,10 +178,13 @@ class gejalaController extends Controller
                             $nd=$nodeSelanjutnya[0]->tidak;
                             if(!is_null($nd)){
                                 $gejala=gejala::where('id',$nd)->get();
-                                return view('diagnosa.diagnosa')->with('gejala',$gejala[0]);
+                                if(auth::user()!=null){
+                                    return view('diagnosa.diagnosa')->with('gejala',$gejala[0]);
+                                }else{
+                                    return view('diagnosa.diagnosaGuest')->with('gejala',$gejala[0]);
+                                }
                             } else{
                                 return view('diagnosa.diagnosa');
-                                die();
                             }
                         }
                     }

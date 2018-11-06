@@ -75,7 +75,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <a href="/pakar" class="btn btn-danger">Kembali</a>
-                                {{Form::submit('Submit',['class'=>'btn btn-primary'])}}
+                                {{Form::submit('Edit',['class'=>'btn btn-primary'])}}
                             </div>
                         </div>
                         

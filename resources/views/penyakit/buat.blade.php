@@ -16,6 +16,7 @@
         {{Form::label('deskripsi','Deskripsi')}}
         {{Form::textarea('deskripsi','',['id' => 'article-ckeditor','class'=>'form-control','placeholder'=>'Berisi Deskripsi Penyakit Beserta Cara Penanganannya'])}}
     </div>
+    <a class="btn btn-danger" href="{{route('penyakit.index')}}">Batal</a>
     {{Form::submit('Buat',['class'=>'btn btn-primary'])}}
     {!! Form::close() !!}
 </div>

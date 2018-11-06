@@ -9,4 +9,6 @@
 @section('content')
 @endguest
 <h1>{{$penyakit->namaPenyakit}}</h1>
+<br><br>
+{!!$penyakit->deskripsi!!}
 @endsection

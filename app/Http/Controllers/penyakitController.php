@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\penyakit;
 use DB;
+use Auth;
 
 class penyakitController extends Controller
 {
@@ -16,7 +17,11 @@ class penyakitController extends Controller
     public function index()
     {
         $penyakit =  penyakit::paginate(10);
-        return view('penyakit.index')->with('penyakit',$penyakit);
+        if(auth::user()!=null){
+            return view('penyakit.index')->with('penyakit',$penyakit);
+        } else{
+            return view('penyakit.indexGuest')->with('penyakit',$penyakit);
+        }
     }
     
     /**
@@ -59,7 +64,12 @@ class penyakitController extends Controller
         public function show($id)
         {
             $penyakit = penyakit::find($id);
-            return view('penyakit.lihat')->with('penyakit',$penyakit);
+            if(auth::user()!=null){
+                return view('penyakit.lihat')->with('penyakit',$penyakit);
+            } else{
+                return view('penyakit.lihatGuest')->with('penyakit',$penyakit);
+            }
+            
         }
         
         /**
@@ -106,9 +116,9 @@ class penyakitController extends Controller
             {
                 $penyakit = penyakit::find($id);
                 $penyakit->delete();
-                return redirect('/penyakit')->with('success','Data Penyakit Telah Dihapus');
+                return redirect('/penyakit')->with('success','Data Penyakit Telah Dihapus,  Harap Periksa kKembali Struktur Node Pada Gejala Penyakit');
             }
-
+            
             public function search(Request $request){
                 $search = $request->get('search');
                 $penyakit = penyakit::where('namaPenyakit','like','%'.$search.'%')->paginate(10);

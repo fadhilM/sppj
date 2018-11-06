@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/profil','userController@lihatProfil');
+Route::get('/profil','userController@lihatProfil')->name('profil');
 Route::resource('pakar','userController');
 Route::resource('penyakit','penyakitController');
 Route::resource('gejala','gejalaController');
