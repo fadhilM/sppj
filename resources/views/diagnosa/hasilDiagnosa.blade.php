@@ -8,7 +8,13 @@
 @endsection  
 @section('content')
 @endguest
-<h1>{{$penyakit->namaPenyakit}}</h1>
-<br><br>
-{!!$penyakit->deskripsi!!}
+
+<div class="r1">
+    <h1>{{$penyakit->namaPenyakit}}</h1>
+    <hr class="hr"><br><br>
+    <div>
+        {!!$penyakit->deskripsi!!}
+    </div>
+    <br>
+</div>
 @endsection

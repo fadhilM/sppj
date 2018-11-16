@@ -13,16 +13,16 @@
         </div>
         <div class="card-body">
             @if(isset($gejala))
-            <h1>{{$gejala->pertanyaan}}</h1>
-            <div>
-                {!!Form::open(['action'=> ['gejalaController@node',$gejala->id], 'method' => 'POST'])!!}
-                {{Form::submit('Ya',['class'=>'btn btn-primary','value'=>'ya','name'=>'submit'])}}
-                {{Form::submit('Tidak',['class'=>'btn btn-secondary','value'=>'tidak','name'=>'submit'])}}
-                {!! Form::close() !!}
-            </div>
+            <h2 style="text-align: center;">{{$gejala->pertanyaan}}</h2>
             @else
             <h1>Maaf Penyakit Tidak Ditemukan</h1>
             @endif
+        </div>
+        <div class="card-footer text-center">
+            {!!Form::open(['action'=> ['gejalaController@node',$gejala->id], 'method' => 'POST'])!!}
+            {{Form::submit('Ya',['class'=>'btn btn-primary','value'=>'ya','name'=>'submit'])}}&nbsp;&nbsp;&nbsp;
+            {{Form::submit('Tidak',['class'=>'btn btn-secondary','value'=>'tidak','name'=>'submit'])}}
+            {!! Form::close() !!}
         </div>
     </div>
 </div>

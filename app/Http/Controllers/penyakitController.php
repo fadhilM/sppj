@@ -122,7 +122,13 @@ class penyakitController extends Controller
             public function search(Request $request){
                 $search = $request->get('search');
                 $penyakit = penyakit::where('namaPenyakit','like','%'.$search.'%')->paginate(10);
-                return view('penyakit.index')->with('penyakit',$penyakit);
+               
+                
+                if(auth::user()!=null){
+                    return view('penyakit.index')->with('penyakit',$penyakit);
+                }else{
+                    return view('penyakit.indexGuest')->with('penyakit',$penyakit);
+                }
             }
         }
         

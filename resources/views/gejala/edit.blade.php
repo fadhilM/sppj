@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Buat Data Gejala</div>
+                <div class="card-header">Edit Data Gejala</div>
                 
                 <div class="card-body">
                     {!! Form::open(['action'=> ['gejalaController@update',$gejala->id], 'method' => 'POST'])!!}

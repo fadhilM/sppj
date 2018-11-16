@@ -27,6 +27,25 @@
     <!-- Custom CSS -->
     <link href="{{ asset('asset/simpleSidebar/css/simple-sidebar.css') }} " rel="stylesheet">
     
+    <script>
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+        
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="{{ asset('asset/homepage/css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="{{ asset('asset/homepage/css/component.cs') }}s" type="text/css" media="all">
+    <link href="{{ asset('asset/homepage/css/style.css') }}" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="{{ asset('asset/homepage/css/owl.theme.css') }}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ asset('asset/homepage/css/owl.carousel.css') }}" type="text/css" media="screen" property="" />
+    <link href="{{ asset('asset/homepage/css/minimal-slider.css') }}" rel='stylesheet' type='text/css' />
+    <link href="{{ asset('asset/homepage/css/fontawesome-all.css') }}" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=BenchNine:300,400,700" rel="stylesheet">
+    
     
     <style type="text/css">
         .r1{
@@ -42,13 +61,10 @@
 </head>
 
 <body>
-    
     <div class="wrapper">
         @include('inc.sidebar')
-        
         <div class="main-panel">
             @include('inc.navbar')
-            
             <div class="content">
                 <div class="container-fluid">
                     @include('inc.popup')
@@ -56,65 +72,51 @@
                     @yield('content')
                 </div>
             </div>
+            
             @include('inc.footer')
         </div>
     </div>
     
-    {{-- @include('inc.navbar') --}}
-    {{-- <br><br><br>
-        @yield('guest')
-        <div id="wrapper">
-            @yield('sidebar')
-            <!-- Page Content -->
-            <div class="container">
-                <br><br>
-                @include('inc.popup')
-                <br><br>
-                @yield('content')
-            </div>
-            <!-- /#page-content-wrapper -->
+    <!-- /#wrapper --> --}}
+    
+    <!--   Core JS Files   -->
+    <script src="{{ asset('asset/lightBootstrap/assets/js/core/jquery.3.2.1.min.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('asset/lightBootstrap/assets/js/core/popper.min.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('asset/lightBootstrap/assets/js/core/bootstrap.min.js')}}" type="text/javascript"></script>
+    
+    <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+    <script src="{{ asset('asset/lightBootstrap/assets/js/plugins/bootstrap-switch.js')}}"></script>
+    
+    <!--  Chartist Plugin  -->
+    <script src="{{ asset('asset/lightBootstrap/assets/js/plugins/chartist.min.js')}}"></script>
+    
+    <!--  Notifications Plugin    -->
+    <script src="{{ asset('asset/lightBootstrap/assets/js/plugins/bootstrap-notify.js')}}"></script>
+    
+    <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
+    <script src="{{ asset('asset/lightBootstrap/assets/js/light-bootstrap-dashboard.js')}}" type="text/javascript"></script>
+    
+    <!-- Bootstrap Core JavaScript -->
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Javascript method's body can be found in assets/js/demos.js
+            demo.initDashboardPageCharts();
             
-        </div>
-        <!-- /#wrapper --> --}}
-        
-        <!--   Core JS Files   -->
-        <script src="{{ asset('asset/lightBootstrap/assets/js/core/jquery.3.2.1.min.js')}}" type="text/javascript"></script>
-        <script src="{{ asset('asset/lightBootstrap/assets/js/core/popper.min.js')}}" type="text/javascript"></script>
-        <script src="{{ asset('asset/lightBootstrap/assets/js/core/bootstrap.min.js')}}" type="text/javascript"></script>
-        
-        <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-        <script src="{{ asset('asset/lightBootstrap/assets/js/plugins/bootstrap-switch.js')}}"></script>
-        
-        <!--  Chartist Plugin  -->
-        <script src="{{ asset('asset/lightBootstrap/assets/js/plugins/chartist.min.js')}}"></script>
-        
-        <!--  Notifications Plugin    -->
-        <script src="{{ asset('asset/lightBootstrap/assets/js/plugins/bootstrap-notify.js')}}"></script>
-        
-        <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
-        <script src="{{ asset('asset/lightBootstrap/assets/js/light-bootstrap-dashboard.js')}}" type="text/javascript"></script>
-        
-        <!-- Bootstrap Core JavaScript -->
-        {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
-        
-        <script type="text/javascript">
-            $(document).ready(function() {
-                // Javascript method's body can be found in assets/js/demos.js
-                demo.initDashboardPageCharts();
-                
-                demo.showNotification();
-                
-            });
-        </script>
-        
-        <!-- CKEDITOR -->
-        {{-- <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script> --}}
-        <script src="{{ asset('asset/ckeditor/ckeditor.js') }}"></script>
-        <script>
-            CKEDITOR.replace( 'article-ckeditor' );
-        </script>
-        <script>
+            demo.showNotification();
             
+        });
+    </script>
+    
+    <!-- CKEDITOR -->
+    {{-- <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script> --}}
+    <script src="{{ asset('asset/ckeditor/ckeditor.js') }}"></script>
+    <script>
+        CKEDITOR.replace( 'article-ckeditor' );
+    </script>
+    <script>
+        
         $('#editNode').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) // Button that triggered the modal
             var recipient = button.data('whatever') // Extract info from data-* attributes
@@ -123,9 +125,45 @@
             var modal = $(this)
             modal.find('.id').val(recipient)
         })
-        </script>
-        
-    </body>
-    
-    </html>
-    
+    </script>
+    <!--//model-form-->
+    <!-- js -->
+    <script src="{{ asset('asset/homepage/js/jquery-2.2.3.min.js') }}"></script>
+    <script src="{{ asset('asset/homepage/js/minimal-slider.js') }}"></script>
+    <script src="{{ asset('asset/homepage/js/toucheffects.js') }}"></script>
+    <script src="{{ asset('asset/homepage/js/modernizr.custom.js') }}"></script>
+    <!-- carousel -->
+    <script src="{{ asset('asset/homepage/js/owl.carousel.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    600: {
+                        items: 1,
+                        nav: false
+                    },
+                    900: {
+                        items: 1,
+                        nav: false
+                    },
+                    1000: {
+                        items: 2,
+                        nav: true,
+                        loop: false,
+                        margin: 20
+                    }
+                }
+            })
+        })
+    </script>
+    <!-- //carousel -->
+</body>
+
+</html>
