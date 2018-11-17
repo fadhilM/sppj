@@ -43,9 +43,9 @@
                             <td>{{$gj->penyakit ? $gj->penyakit->namaPenyakit :''}}</td>
                             @if(Auth::user()->level==1)
                             <td>
-                                &nbsp<a data-toggle="modal" data-target="#editNode{{$gj->id}}"  class='btn btn-success btn-sm'>Edit Node</a>
-                                &nbsp&nbsp<a href="/gejala/{{$gj->id}}/edit" class='btn btn-primary btn-sm'>Edit</a>
-                                &nbsp<a data-toggle="modal" data-target="#deleteNode{{$gj->id}}"  class='btn btn-danger btn-sm'>Hapus</a>
+                                &nbsp<a data-toggle="modal" data-target="#editNode{{$gj->id}}"  class='btn btn-success btn-sm text-white'>Edit Node</a>
+                                &nbsp&nbsp<a href="/gejala/{{$gj->id}}/edit" class='btn btn-primary btn-sm text-white'>Edit</a>
+                                &nbsp<a data-toggle="modal" data-target="#deleteNode{{$gj->id}}"  class='btn btn-danger btn-sm text-white'>Hapus</a>
                                 {{-- <a href="/gejala/{{$gj->id}}/delete" class='btn btn-danger btn-sm'>Delete</a> --}}
                             </td>
                             @endif
@@ -65,11 +65,11 @@
                                         {!! Form::hidden('id','', array('id' => 'id')) !!}
                                         <div class="form-group row">
                                             {{Form::label('Ya','Ya',['class'=>'col-sm-2 col-form-label'])}}
-                                            {{Form::select('ya', $allGjl->pluck('pertanyaan','id')->prepend('Tidak Ada ',null)->toArray(), $gj->ya ? $gj->ya :'Pilih Pertanyaan Selanjutnya',['class' => 'btn btn-secondary dropdown-toggle'])}}
+                                            {{Form::select('ya', $allGjl->pluck('pertanyaan','id')->prepend(null,"")->toArray(), $gj->ya ? $gj->ya :'Pilih Pertanyaan Selanjutnya',['class' => 'btn btn-secondary dropdown-toggle'])}}
                                         </div>
                                         <div class="form-group row">
                                             {{Form::label('Tidak','Tidak',['class'=>'col-sm-2 col-form-label'])}}
-                                            {{Form::select('tidak', $allGjl->pluck('pertanyaan','id')->prepend('Tidak Ada',null)->toArray(), $gj->tidak ? $gj->tidak :'Pilih Pertanyaan Selanjutnya',['class' => 'btn btn-secondary dropdown-toggle'])}}
+                                            {{Form::select('tidak', $allGjl->pluck('pertanyaan','id')->prepend(null,"")->toArray(), $gj->tidak ? $gj->tidak :'Pilih Pertanyaan Selanjutnya',['class' => 'btn btn-secondary dropdown-toggle'])}}
                                         </div>
                                     </div>
                                     <div class="modal-footer">

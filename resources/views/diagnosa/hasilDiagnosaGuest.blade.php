@@ -1,7 +1,5 @@
 @extends('layouts.guest')
 @section('content')
-<div class="inner-page">
-</div>
 
 <!-- ab -->
 <section class="banner-bottom-w3layouts py-lg-5 py-md-5 py-3" id="feature">

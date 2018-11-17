@@ -17,7 +17,7 @@ class gejalaController extends Controller
     */
     public function index()
     {
-        $gejala = gejala::with('penyakit')->paginate(5);
+        $gejala = gejala::with('penyakit')->paginate(20);
         $allGjl = gejala::all();
         return view('gejala.index',['allGjl'=>$allGjl])->with('gejala',$gejala);
     }
@@ -108,7 +108,7 @@ class gejalaController extends Controller
                 }
                 
                 public function updateNode(Request $request, $id)
-                {
+                {  
                         $ya = $request->input('ya');
                         $tidak = $request->input('tidak');
                         if($ya==0){

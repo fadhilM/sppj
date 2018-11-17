@@ -11,12 +11,9 @@
     <div class="card">
         <div class="card-header">
         </div>
-        <div class="card-body">
-            @if(isset($gejala))
+        @if(isset($gejala))
+        <div class="card-body">    
             <h2 style="text-align: center;">{{$gejala->pertanyaan}}</h2>
-            @else
-            <h1>Maaf Penyakit Tidak Ditemukan</h1>
-            @endif
         </div>
         <div class="card-footer text-center">
             {!!Form::open(['action'=> ['gejalaController@node',$gejala->id], 'method' => 'POST'])!!}
@@ -24,6 +21,12 @@
             {{Form::submit('Tidak',['class'=>'btn btn-secondary','value'=>'tidak','name'=>'submit'])}}
             {!! Form::close() !!}
         </div>
+        @else
+        <div class="card-body">    
+            <h2 style="text-align: center;">Maaf Penyakit Tidak Ditemukan</h2>
+        </div>
+        
+        @endif
     </div>
 </div>
 @endsection

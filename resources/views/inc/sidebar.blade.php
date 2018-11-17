@@ -53,13 +53,14 @@
                         </a>
                     </li>     
                     @endif
-                    
+                    @if (Auth::user()->level!=0)
                     <li>
                         <a class="nav-link" href="{{ route('diagnosa') }}">
                             <i class="nc-icon nc-notes"></i>
                             <p>Diagnosa Penyakit</p>
                         </a>
                     </li>
+                    @endif
                 </ul>
             </div>
         </div>
