@@ -7,9 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class gejala extends Model
 {
     protected $table='gejala';
-    public $timestamps = false;
+    // public $timestamps = false;
     // public $primaryKey ='id';
 
+    protected $fillable = [
+        'pertanyaan', 'ya', 'tidak', 'posisi'
+    ];
+    
     public function ya(){
         return $this->hasOne('App\gejala');
     }

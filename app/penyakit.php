@@ -13,6 +13,10 @@ class penyakit extends Model
     //Timestamps
     public $timestamps = true;
 
+    protected $fillable = [
+        'id', 'namaPenyakit', 'deskripsi',
+    ];
+
     public function gejala()
     {
         return $this->belongsTo('App\gejala');

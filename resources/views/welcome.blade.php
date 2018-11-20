@@ -48,8 +48,6 @@
                         <figure>
                             <img src="{{ asset('asset/homepage/images/g1.jpg') }}" class="img-fluid" alt="img03">
                             <figcaption>
-                                <h3>Vegitables</h3>
-                                <span>Lorem ipsum </span>   
                             </figcaption>
                         </figure>
                     </li>
@@ -57,8 +55,6 @@
                         <figure>
                             <img src="{{ asset('asset/homepage/images/g2.jpg') }}" class="img-fluid" alt="img03">
                             <figcaption>
-                                <h3>Berries</h3>
-                                <span>Lorem ipsum </span>
                             </figcaption>
                         </figure>
                     </li>
@@ -66,8 +62,6 @@
                         <figure>
                             <img src="{{ asset('asset/homepage/images/g3.jpg') }}" class="img-fluid" alt="img03">
                             <figcaption>
-                                <h3>Organic Dairy</h3>
-                                <span>Lorem ipsum </span>
                             </figcaption>
                         </figure>
                     </li>
@@ -75,8 +69,6 @@
                         <figure>
                             <img src="{{ asset('asset/homepage/images/g4.jpg') }}" class="img-fluid" alt="img03">
                             <figcaption>
-                                <h3>Seeds</h3>
-                                <span>Lorem ipsum </span>
                             </figcaption>
                         </figure>
                     </li>
@@ -84,8 +76,6 @@
                         <figure>
                             <img src="{{ asset('asset/homepage/images/g5.jpg') }}" class="img-fluid" alt="img03">
                             <figcaption>
-                                <h3>Herbs</h3>
-                                <span>Jacob Cummings</span>
                             </figcaption>
                         </figure>
                     </li>
@@ -93,8 +83,6 @@
                         <figure>
                             <img src="{{ asset('asset/homepage/images/g6.jpg') }}" class="img-fluid" alt="img03">
                             <figcaption>
-                                <h3>Farm</h3>
-                                <span>Lorem ipsum </span>
                             </figcaption>
                         </figure>
                     </li>
