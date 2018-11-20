@@ -4,8 +4,8 @@
             <div class="slide-wrapper" style="width:300%;">
                 <div class="slide">
                     <div class="slide-caption text-center">
-                        <p class="text-uppercase">The right choice</p>
-                        <h3 class="text-uppercase">Improving agriculture, improving lives.</h3>
+                        <p class="text-uppercase">Pilihan Terbaik</p>
+                        <h3 class="text-uppercase">Perbaiki Kualitas Jagung Untuk Pangan Yang Lebih Baik</h3>
                     </div>
                 </div>
                 <div class="slide slide2">
@@ -40,9 +40,6 @@
     <div class="banner-bottom-w3layouts py-lg-5 py-3">
         <div class="container">
             <div class="inner-sec-w3ls-agileits py-lg-5 py-3">
-                <h4 class="sub-tittle text-uppercase text-center">What we do</h4>
-                <h3 class="tittle text-center mb-lg-5 mb-3">
-                    WHAT WE OFFER</h3>
                 <ul class="grid cs-style-5 row">
                     <li class="grid-info-img">
                         <figure>
@@ -95,11 +92,11 @@
     <section class="bottom-last">
         <div class="bottom-bg py-5 bs-slider-overlay text-left">
             <div class="container">
-                <h3 class="tittle text-left"> WHAT WE OFFER</h3>
-                <p class="text-white mb-4">Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem ipsum dolor sit amet Neque porro quisquam est qui dolorem Lorem int ipsum dolor sit amet.</p>
-                <div class="log-in pb-md-5 pb-3">
-                    <a class="hover-2 btn text-uppercase" href="single.html">Read More</a>
-                </div>
+                <h3 class="tittle text-left">Tentang Kami</h3>
+                <p class="text-white mb-4" style="font-size: 120%;"> 
+                    Pepplecorn bertujuan untuk memperbaiki kualitas tanaman jagung dengan membantu dalam mendiagnosoa
+                    Penyakit yang diderita oleh tanaman jagung serta memberikan solusi dalam mengatasi penyakit tersebut.
+                </p>
             </div>
 
         </div>

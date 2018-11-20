@@ -21,7 +21,7 @@
                                 <th>Ya</th>
                                 <th>Tidak</th>
                                 <th>Posisi</th> 
-                                <th>ID Penyakit</th>
+                                <th>Nama Penyakit</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>

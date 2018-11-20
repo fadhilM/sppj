@@ -41,7 +41,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     <div class="col-md-6 logo text-center">
                         <h1>
-                            <a class="navbar-brand" href="index.html">
+                            <a class="navbar-brand" href={{route('welcome')}}>
                                 <i class="fas fa-leaf"></i>Pepplecorn</a>
                         </h1>
                     </div>
